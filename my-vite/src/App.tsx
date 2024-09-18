@@ -1,7 +1,7 @@
 import { Callout, Intent, Tab, Tabs } from '@blueprintjs/core'
 import './App.css'
 import ClassComponent from './ClassComponent'
-import Flow from './Flow'
+import Flow from './Graph/Flow'
 import PassportForm from './SimpleForm'
 import Search from './Search'
 import FuncComponent from './FuncComponent'
@@ -29,7 +29,7 @@ const App: React.FC = () => {
         <Tab id="form" title="Simple Form" panel={<PassportForm />} />
         <Tab
           id="flow"
-          title="ReactFlow"
+          title="Nodes & Edges"
           panel={
             <div style={{ height: '100vh' }}>
               <Flow />

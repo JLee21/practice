@@ -1,14 +1,15 @@
 import { createContext, ReactNode, useContext, useState } from 'react'
+import { RankDir } from './Flow'
 
 interface GraphContextProps {
-  direction: string
-  setDirection: (direction: string) => void
+  direction: RankDir | null
+  setDirection: (direction: RankDir | null) => void
 }
 
 const GraphContext = createContext<GraphContextProps | undefined>(undefined)
 
 export const GraphProvider = ({ children }: { children: ReactNode }) => {
-  const [direction, setDirection] = useState('TB')
+  const [direction, setDirection] = useState<RankDir | null>(null)
 
   return (
     <GraphContext.Provider value={{ direction, setDirection }}>

@@ -47,19 +47,19 @@ const isValid = (
   return true
 }
 
-console.log('*** USA')
-console.log(isValid('L12345678', passportFormats['USA'])) // true
-console.log(isValid('L1234567', passportFormats['USA'])) // false
-console.log(isValid('012345678', passportFormats['USA'])) // false
-console.log(isValid('L1234567 ', passportFormats['USA'])) // should false.
+// console.log('*** USA')
+// console.log(isValid('L12345678', passportFormats['USA'])) // true
+// console.log(isValid('L1234567', passportFormats['USA'])) // false
+// console.log(isValid('012345678', passportFormats['USA'])) // false
+// console.log(isValid('L1234567 ', passportFormats['USA'])) // should false.
 
-console.log('*** Ireland')
-console.log(isValid('AA1234567', passportFormats['Ireland'])) // true
-console.log(isValid('001234567', passportFormats['Ireland'])) // true
-console.log(isValid('aa1234567', passportFormats['Ireland'])) // true
-console.log(isValid('L1234567', passportFormats['Ireland'])) // false
-console.log(isValid('012345678', passportFormats['Ireland'])) // true
-console.log(isValid('L1234567 ', passportFormats['Ireland'])) // false.
+// console.log('*** Ireland')
+// console.log(isValid('AA1234567', passportFormats['Ireland'])) // true
+// console.log(isValid('001234567', passportFormats['Ireland'])) // true
+// console.log(isValid('aa1234567', passportFormats['Ireland'])) // true
+// console.log(isValid('L1234567', passportFormats['Ireland'])) // false
+// console.log(isValid('012345678', passportFormats['Ireland'])) // true
+// console.log(isValid('L1234567 ', passportFormats['Ireland'])) // false.
 
 const PassportForm: React.FC = () => {
   const [country, setCountry] = useState<string>()

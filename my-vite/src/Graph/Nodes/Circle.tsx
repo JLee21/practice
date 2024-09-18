@@ -44,6 +44,7 @@ const CircleNode = (props: NodeProps<CircleNode>) => {
   const { data } = props
   const flow = useReactFlow()
   const [expand, setExpand] = useState(false)
+  const hideNode = data.label === '' || data.label === 'null'
 
   const handleExpand = () => {
     setExpand((isExpanded) => !isExpanded)
@@ -63,7 +64,8 @@ const CircleNode = (props: NodeProps<CircleNode>) => {
     flow.setEdges(newEdges)
 
     const newNodes = nodes.map((node: Node) => {
-      const hidden = !expand && children.nodes.has(node.id)
+      let hidden = !expand && children.nodes.has(node.id)
+      hidden = hidden || hideNode
 
       return {
         ...node,
@@ -76,7 +78,7 @@ const CircleNode = (props: NodeProps<CircleNode>) => {
   return (
     <div
       style={{
-        visibility: data.hidden ? 'hidden' : 'visible',
+        visibility: data.hidden || hideNode ? 'hidden' : 'visible',
         borderRadius: '50%',
         width: '75px',
         height: '75px',
